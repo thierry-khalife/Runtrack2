@@ -14,7 +14,7 @@ $val = 6;
 echo "<br>";
 echo $val;
 echo "<br>";
-$val = 6 + 4;
+$val = $val + 4;
 echo $val;
 
 $myBool = true;
