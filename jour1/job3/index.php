@@ -38,7 +38,7 @@ $string = "LaPlateforme";
         </tr>
          <tr>
             <td><?php echo gettype ($string); ?></td>
-            <td>Chaîne de caractères</td>
+            <td>String</td>
             <td><?php echo $string; ?></td>
         </tr>
     </tbody>
