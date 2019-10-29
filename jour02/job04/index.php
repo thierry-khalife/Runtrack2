@@ -9,23 +9,23 @@ while ( $nbr <= 100) {
     echo "<br />";
     $nbr++;
    }
-   if ($nbr % 5 == 0 && $nbr % 3 != 0)
+   elseif ($nbr % 5 == 0 && $nbr % 3 != 0)
    {
     echo "Buzz";
     echo "<br />";
     $nbr++;
    }
-   if ($nbr % 3 == 0 && $nbr % 5 == 0)
+   elseif ($nbr % 3 == 0 && $nbr % 5 == 0)
    {
     echo "FizzBuzz";
     echo "<br />";
     $nbr++;
    }
-
+   else{
     echo $nbr;
     echo "<br />";
     $nbr++;
-    
+   }   
 }
 
 ?>
