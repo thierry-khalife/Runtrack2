@@ -3,25 +3,27 @@
 $nbr = 0;
 
 while ( $nbr <= 100) {
-	
-	while ($nbr >= 0 && $nbr <= 20) {
-		 echo "<i>".$nbr."</i>";
-		 echo "<br />";
-	     $nbr++;
-	}
-	while ($nbr >= 25 && $nbr <= 50){
-		if ($nbr == 42) {
+    for ($nbr; $nbr<=20; $nbr++) {
+        echo "<i>".$nbr."</i>";
+		echo "<br />";
+    }
+    for ($nbr; $nbr<25; $nbr++) {
+        echo $nbr;
+		echo "<br />";
+    }
+    for ($nbr; $nbr<=50; $nbr++) {
+        if ($nbr == 42) {
 			echo "LaPlateforme_";
 			echo "<br />";
-			$nbr++;
 		}
 		else{
 			echo "<u>".$nbr."</u>";
 	        echo "<br />";
-	        $nbr++;
 		}
-		 
-	}
+    } 
+    echo $nbr;
+    echo "<br />";
+    $nbr++;
 }
 
 ?>
