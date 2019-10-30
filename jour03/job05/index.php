@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Consonnes & Voyelles</title>
+</head>
+<body>
 <?php  
 
 $str = "On nest pas le meilleur quand on le croit mais quand on le sait";
@@ -21,8 +27,21 @@ while ( $i < $strlength) {
 
       $i++;
   }
-     echo "Dans str il existe ".$dic["voyelles"]." voyelles<br>";
-     echo "Dans str il existe ".$dic["consonnes"]." consonnes<br>";
-   
-
 ?>
+<table>
+    <thead>
+        <tr>
+            <th><?php echo "Voyelles"?></th>
+            <th><?php echo "Consonnes"?></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><?php echo $dic["voyelles"]; ?></td>
+            <td><?php echo $dic["consonnes"];?></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
