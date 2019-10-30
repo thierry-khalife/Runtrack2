@@ -7,14 +7,18 @@
 <?php  
 
 $str = "On nest pas le meilleur quand on le croit mais quand on le sait";
-$dic = array("consonnes"=>["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t","v", "w", "x", "z"],"voyelles"=>["a", "e", "i", "o", "O", "u","y"]);
+$dic = array("consonnes"=>["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t","v", "w", "x", "z"],"voyelles"=>["a", "e", "i", "o", "O", "u","y"],"espaces"=>[" "]);
 $cpt = array("consonnes" => 0, "voyelles" => 0);
 $i =0;
 $strlength = strlen($str);
 
 
 while ( $i < $strlength) {
-	if(in_array($str[$i],$dic["voyelles"])) //in array permet de savoir si notre str[i] existe dans le tableau des voyelles, si oui il nous retourne true
+
+	if (in_array($str[$i],$dic["espaces"])) {
+		
+	}
+	elseif(in_array($str[$i],$dic["voyelles"])) //in array permet de savoir si notre str[i] existe dans le tableau des voyelles, si oui il nous retourne true
      {
          $cpt["voyelles"] =  $cpt["voyelles"] + 1;
          
