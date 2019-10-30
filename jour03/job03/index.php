@@ -7,12 +7,9 @@ $strlegnth = strlen($str);
 
 
 while ($i < $strlegnth) {
-    if($str[$i] == in_array($str[$i], $voyelles))
+    if(in_array($str[$i], $voyelles)) //in array permet de savoir si notre str[i] existe dans le tableau des voyelles, si oui il nous retourne true
      {
          echo $str[$i];
-     }
-     else {
-     	 $verif = false;
      }
     $i++;
 }
