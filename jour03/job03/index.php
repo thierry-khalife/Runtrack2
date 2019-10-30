@@ -7,10 +7,12 @@ $strlegnth = strlen($str);
 
 
 while ($i < $strlegnth) {
-    if(in_array($str[$i], $voyelles)) //in array permet de savoir si notre str[i] existe dans le tableau des voyelles, si oui il nous retourne true
-     {
-         echo $str[$i];
-     }
-    $i++;
-}
+		 foreach ($voyelles as $voy){
+		 	   if($str[$i] == $voy) {
+                echo $str[$i];
+            }
+		 }
+		  $i++;
+    }
+    
 ?>
