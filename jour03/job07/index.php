@@ -10,6 +10,7 @@ while ($i < $strlength) {
  	echo $str[0];
  }
  else{
+ 	
  	echo $str[$i+1];
  	
  }
