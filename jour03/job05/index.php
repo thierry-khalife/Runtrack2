@@ -9,7 +9,6 @@
 $str = "On nest pas le meilleur quand on le croit mais quand on le sait";
 $dic = array("consonnes"=>["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t","v", "w", "x", "z"],"voyelles"=>["a", "e", "i", "o", "O", "u","y"]);
 $cpt = array("consonnes" => 0, "voyelles" => 0);
-$voyelles =  array("a", "e", "i", "o", "u", "y","O");
 $i =0;
 $strlength = strlen($str);
 
