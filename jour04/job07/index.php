@@ -14,43 +14,66 @@
 </form>
 
 <?php
-$space = "&nbsp";
+$hauteur=$_GET["hauteur"];
+$largeur=$_GET["largeur"];
+$i=0;
+$b=0;
+$underscore="";
+$taille_espace=($largeur / 2) +1;
+$space="";
+$i2=0;
+
 if($_GET==true)
 {
-$h=$_GET["hauteur"];
-$l=$_GET["largeur"];
-$i=0;
-$trait="";
-$taille_espace=($l / 2) +1;
-$espace="";
-$e=0;
-while ($taille_espace>=$e)
+
+while ($taille_espace>=$b)
 {
-$espace=$espace."&nbsp&nbsp";
-$e++;
+        $space=$space."&nbsp&nbsp";
+        $b++;
 }
 
-
-//toit
-$i2=0;
-while($i+1<$l)
+while($i+1<$largeur)
 {
-	echo $space.$space.$space.$space.$space.$space.$space.$space.$space.$space.$space.$space.$space.$space.$space;
-    echo $espace;
-    $espace=substr($espace, 0, -5);
+        echo $space;
+        $space=substr($space, 0, -5);
+        
 
+        while ($i2==$i){
+        echo"/";
+        echo $underscore;
+        $underscore=$underscore."_";
+        $i2++;
+        echo "\\<br>";
+        }
+        
+        
 
-echo"/";
-while ($i2==$i){
-echo $trait;
-$trait=$trait."_";
-$i2++;
-}
-echo"\\<br>";
 $i++;
-}
+}       
+        $base=0;
+        while($base<=($hauteur - $largeur))
+        {
+          echo $space."|";
+          for ($t=0; $t < $largeur -1 ; $t++) { 
+          	echo "&nbsp;&nbsp;";
+          }
+          echo "|<br>";
+          $base++;
+        }
+
+        $end=0;
+        while($end<1)
+        {
+          echo $space."|";
+          for ($t=0; $t < $largeur -1 ; $t++) { 
+          	echo "_";
+          }
+          echo "|<br>";
+          $end++;
+        }
 
 }
+
 
 
 /*if($_GET == true)
