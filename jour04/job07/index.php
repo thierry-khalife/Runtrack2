@@ -25,30 +25,26 @@ $i2=0;
 
 if($_GET==true)
 {
-        $toit = $hauteur/2;
-        $k = 0;
-        while ($toit >= 0)
-        {
-             while ($taille_espace>=$b)
-             {
-             $space=$space."&nbsp&nbsp";
-             $b++;
-             } 
-            while($i+1<$largeur)
-             {
-             echo $space;
-             $space=substr($space, 0, -5);
-             while ($i2==$i){
-             echo"/";
-             echo $underscore;
-             $underscore=$underscore."_";
-             $i2++;
-             echo "\\<br>";
-             }
-             $i++;
-             }
-          $toit--;
-        }
+        
+     while ($taille_espace>=$b)
+     {
+       $space=$space."&nbsp&nbsp";
+       $b++;
+     } 
+     while($i+1<$largeur)
+     {
+       echo $space;
+       $space=substr($space, 0, -5);
+       while ($i2==$i){
+       echo"/";
+       echo $underscore;
+       $underscore=$underscore."_";
+       $i2++;
+       echo "\\<br>";
+      }
+      $i++;
+      }
+          
 
         $base=0;
         while($base<=($hauteur - $largeur))
