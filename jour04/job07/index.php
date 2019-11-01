@@ -14,54 +14,52 @@
 </form>
 
 <?php
-$hauteur=$_GET["hauteur"];
-$largeur=$_GET["largeur"];
+
 $i=0;
 $b=0;
 $underscore="";
-$taille_espace=($largeur / 2) +1;
 $space="";
 $i2=0;
-
+$i5=0;
 if($_GET==true)
 {
-        
-     while ($taille_espace>=$b)
-     {
-       $space=$space."&nbsp&nbsp";
-       $b++;
-     } 
-     while($i+1<$largeur)
-     {
-       echo $space;
-       $space=substr($space, 0, -5);
-       while ($i2==$i){
-       echo"/";
-       echo $underscore;
-       $underscore=$underscore."_";
-       $i2++;
-       echo "\\<br>";
-      }
-      $i++;
-      }
-          
-
-        $base=0;
-        while($base<=($hauteur - $largeur))
+     $hauteur=$_GET["hauteur"];
+     $largeur=$_GET["largeur"] ;
+     $taille_espace=($largeur / 2) +1;
+     $espaces = ($largeur / 2); 
+        //toit
+        for($i = 1, $k = 0; $i <= $espaces ; $i++, $k = 0)
         {
-          echo $space."|";
-          for ($t=0; $t < $largeur -1 ; $t++) { 
+        for($space = 0; $space < $espaces-$i; $space++)
+        {
+            echo "&nbsp&nbsp";
+        }
+        echo "/";
+        while($k != 2*$i)
+        {   
+            echo "_";
+            $k++;
+        }
+        echo "\\";
+        echo "<br>";;
+        }    
+        //base maison
+        $base=0;
+        while($base< $largeur/2)
+        {
+          echo "|";
+          for ($t=0; $t < $largeur ; $t++) { 
           	echo "&nbsp;&nbsp;";
           }
           echo "|<br>";
           $base++;
         }
-
+        //Terre
         $end=0;
         while($end<1)
         {
-          echo $space."|";
-          for ($t=0; $t < $largeur -1 ; $t++) { 
+          echo "|";
+          for ($t=0; $t < $largeur ; $t++) { 
           	echo "_";
           }
           echo "|<br>";
