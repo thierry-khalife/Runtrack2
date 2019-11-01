@@ -7,9 +7,11 @@
 
 <form  action="index.php" method="get">
 <label>Hauteur : </label>
-<input type="text" name="hauteur" />
+<input type="text" name="hauteur" required/>
 <label>Largeur : </label>
-<input type="text" name="largeur" />
+<input type="text" name="largeur" required/>
+<label>Couleur (red pour rouge) : </label>
+<input type="text" name="couleur" required/>
 <input  type="submit" value="OK">
 </form>
 
@@ -25,6 +27,7 @@ if($_GET==true)
 {
      $hauteur=$_GET["hauteur"];
      $largeur=$_GET["largeur"];
+     $couleur=$_GET["couleur"];
      $toit = ($largeur / 2) -1; 
         //toit
         $k=0;
@@ -37,7 +40,8 @@ if($_GET==true)
             {
             echo "&nbsp&nbsp";
             }
-            echo "/\\<br>";
+            echo "<span style = color:".$couleur.";>/\\</span></br>";
+            
           }
         
         echo "&nbsp&nbsp&nbsp&nbsp";
@@ -46,24 +50,24 @@ if($_GET==true)
         {
             echo "&nbsp&nbsp";
         }
-        echo "/";
+        echo "<span style = color:".$couleur.";>/</span>";
         for($c = 2*$i ; $c > 0 ; $c--)
         {  
-            echo "_";
+            echo "<span style = color:".$couleur.";>_</span>";
         }
-        echo "\\";
-        echo "<br>";;
+        echo "<span style = color:".$couleur.";>\\</span>";
+        echo "<br>";
         }    
         //base maison
         $base=0;
         while($base< $hauteur - 1)
         {
           echo "&nbsp&nbsp&nbsp&nbsp";
-          echo "|";
+          echo "<span style = color:".$couleur.";>|</span>";
           for ($t=0; $t < $largeur-2; $t++) { 
           	echo "&nbsp&nbsp";
           }
-          echo "|<br>";
+          echo "<span style = color:".$couleur.";>|</span><br>";
           $base++;
         }
         //Terre
@@ -71,11 +75,11 @@ if($_GET==true)
         while($end<1)
         {
           echo "&nbsp&nbsp&nbsp&nbsp";
-          echo "|";
+          echo "<span style = color:".$couleur.";>|</span>";
           for ($t=0; $t < $largeur-2 ; $t++) { 
-          	echo "_";
+          	echo "<span style = color:".$couleur.";>_</span>";
           }
-          echo "|<br>";
+          echo "<span style = color:".$couleur.";>|</span><br>";
           $end++;
         }
 
