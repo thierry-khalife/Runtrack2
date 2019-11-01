@@ -29,6 +29,8 @@ if($_GET==true)
      $largeur=$_GET["largeur"];
      $couleur=$_GET["couleur"];
      $toit = ($largeur / 2) -1; 
+
+if (filter_var($hauteur, FILTER_VALIDATE_INT) && filter_var($largeur, FILTER_VALIDATE_INT)) {
         //toit
         $k=0;
         
@@ -82,7 +84,10 @@ if($_GET==true)
           echo "<span style = color:".$couleur.";>|</span><br>";
           $end++;
         }
-
+}
+else {
+  echo "PAS ENTIER PAS MAISON :)";
+}
 }
 
 ?>
