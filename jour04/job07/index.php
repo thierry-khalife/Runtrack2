@@ -10,7 +10,7 @@
 <input type="text" name="hauteur" required/>
 <label>Largeur : </label>
 <input type="text" name="largeur" required/>
-<label>Couleur (red pour rouge) : </label>
+<label>Couleur (red ou #FF0000 pour rouge) : </label>
 <input type="text" name="couleur" required/>
 <input  type="submit" value="OK">
 </form>
