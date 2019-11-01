@@ -24,32 +24,44 @@ $i5=0;
 if($_GET==true)
 {
      $hauteur=$_GET["hauteur"];
-     $largeur=$_GET["largeur"] ;
-     $taille_espace=($largeur / 2) +1;
-     $espaces = ($largeur / 2); 
+     $largeur=$_GET["largeur"];
+     $toit = ($largeur / 2) -1; 
         //toit
-        for($i = 1, $k = 0; $i <= $espaces ; $i++, $k = 0)
+        $k=0;
+        
+        for($i = 1; $i <= $toit ; $i++)
         {
-        for($space = 0; $space < $espaces-$i; $space++)
+          if ($i == 1) {
+            echo "&nbsp&nbsp&nbsp&nbsp";
+            for($first = 0; $first < $toit; $first++)
+            {
+            echo "&nbsp&nbsp";
+            }
+            echo "/\\<br>";
+          }
+        
+        echo "&nbsp&nbsp&nbsp&nbsp";
+        $k = 0;
+        for($b = 0; $b < $toit-$i; $b++)
         {
             echo "&nbsp&nbsp";
         }
         echo "/";
-        while($k != 2*$i)
-        {   
+        for($c = 2*$i ; $c > 0 ; $c--)
+        {  
             echo "_";
-            $k++;
         }
         echo "\\";
         echo "<br>";;
         }    
         //base maison
         $base=0;
-        while($base< $largeur/2)
+        while($base< $hauteur - 1)
         {
+          echo "&nbsp&nbsp&nbsp&nbsp";
           echo "|";
-          for ($t=0; $t < $largeur ; $t++) { 
-          	echo "&nbsp;&nbsp;";
+          for ($t=0; $t < $largeur-2; $t++) { 
+          	echo "&nbsp&nbsp";
           }
           echo "|<br>";
           $base++;
@@ -58,8 +70,9 @@ if($_GET==true)
         $end=0;
         while($end<1)
         {
+          echo "&nbsp&nbsp&nbsp&nbsp";
           echo "|";
-          for ($t=0; $t < $largeur ; $t++) { 
+          for ($t=0; $t < $largeur-2 ; $t++) { 
           	echo "_";
           }
           echo "|<br>";
@@ -111,3 +124,5 @@ if($_GET==true)
 
 </body>
 </html>
+
+
