@@ -36,13 +36,10 @@ $sizemaj = sizeof($maj);
                      echo "<b>".$str[$i]."</b>";
                      $i++;
                   }
-                 if (isset($str[$i+1])==true){
-
-                 }
             }
 
     }
-          echo $str[$i];     
+    echo $str[$i];     
     $i++;
 }
 }
@@ -51,8 +48,8 @@ function cesar($str,$decalage)
 $i=0;
 $maj =  array("A", "B", "C", "D", "E", "F","G", "H", "I", "J", "K", "L","M", "N", "O", "P", "Q", "R","S", "T", "U", "V", "W", "X","Y", "Z");
 $min =  array("a", "b", "c", "d", "e", "f","g", "h", "i", "j", "k", "l","m", "n", "o", "p", "q", "r","s", "t", "u", "v", "w", "x","y", "z");
-$sizemaj = sizeof($maj) ;
-$sizemin = sizeof($min)  ;
+$sizemaj = sizeof($maj);
+$sizemin = sizeof($min);
 
 while (isset($str[$i])==true)
 {
@@ -103,7 +100,7 @@ if ($_GET["fonction"] == "gras") {
      gras($str);
 }
 if ($_GET["fonction"] == "cesar") {
-     cesar($str,1);
+     cesar($str,2);
 }
 if ($_GET["fonction"] == "Plateforme_") {
      Plateforme_($str);
