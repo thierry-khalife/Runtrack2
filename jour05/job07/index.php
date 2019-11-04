@@ -8,6 +8,8 @@
 <form  action="index.php" method="get">
              <label>Str : </label>
              <input type="text" name="str" required/>
+             <label>Decalage : </label>
+             <input type="number" name="decalage" />
              <label>Fonction : </label>
              <select name="fonction" for="foncu" required>
                 <option value="gras">Gras</option>
@@ -73,7 +75,7 @@ while (isset($str[$i])==true)
                   break;
             }
     }
-        echo $str[$i];
+      echo $str[$i];
       $i++;
 }
 }
@@ -96,11 +98,12 @@ while (isset($str[$i])==true)
 }
 
 $str = $_GET["str"];
+$decalage = $_GET["decalage"];
 if ($_GET["fonction"] == "gras") {
      gras($str);
 }
 if ($_GET["fonction"] == "cesar") {
-     cesar($str,2);
+     cesar($str,$decalage);
 }
 if ($_GET["fonction"] == "Plateforme_") {
      Plateforme_($str);
