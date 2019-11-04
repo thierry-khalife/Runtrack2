@@ -30,9 +30,9 @@ $sizemaj = sizeof($maj);
 {
     for($v = 0; $v < $sizemaj; $v++)
     {
-         if ($str[$i] == $maj[$v])
+         if (($str[$i] == $maj[$v] && $str[$i-1] == " ") || ($str[$i] == $maj[$v] && $i==0))
             {
-                  while ($str[$i]!=" " && isset($str[$i+1])==true){
+                  while ($str[$i]!=" " && isset($str[$i+1])==true ){
                      echo "<b>".$str[$i]."</b>";
                      $i++;
                   }
