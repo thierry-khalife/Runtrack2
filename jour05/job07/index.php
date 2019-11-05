@@ -121,19 +121,27 @@ $i=0;
 while (isset($str[$i])==true)
 {
     
-         if (($str[$i] == "m" && $str[$i+1] == "e") && (isset($str[$i+2])==false || isset($str[$i+1])==" ") )
+         if (($str[$i] == "m" && $str[$i+1] == "e") && isset($str[$i+2])==false  )
             {
                   $str[$i+2] = "_";
                   echo $str[$i];
                   $i++;
-
                  
             }
-    
-           echo $str[$i];
-           $i++;
+          elseif (($str[$i] == "m" && $str[$i+1] == "e") && $str[$i+2]==" ")
+            {
+                 $str[$i+2] = "_";
+                 echo $str[$i];
+                 $i++;
+            }
+            else{
+                 echo $str[$i];
+                 $i++;
+            }
+           
 }
 }
+
 if($_GET==true)
 {
 $str = $_GET["str"];
