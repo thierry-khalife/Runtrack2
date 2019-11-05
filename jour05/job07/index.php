@@ -57,23 +57,37 @@ while (isset($str[$i])==true)
 {
    for($v = 0; $v < $sizemaj; $v++)
     {
-         if ($str[$i] == $maj[$v])
-            {
-                  $str[$i] = $maj[$v+$decalage];
-                  echo $str[$i];
-                  $i++;
-                  break;
-            }
+        if ($str[$i] == "Z" ) {
+                $str[$i] = $maj[-1+$decalage];
+                echo $str[$i];
+                $i++;
+                break;
+        }
+         elseif ($str[$i] == $maj[$v])
+        {
+                $str[$i] = $maj[$v+$decalage];
+                echo $str[$i];
+                $i++;
+                break;
+        }
     }
     for($v = 0; $v < $sizemin; $v++)
     {
-         if ($str[$i] == $min[$v])
-            {
-                  $str[$i] = $min[$v+$decalage];
-                  echo $str[$i];
-                  $i++;
-                  break;
-            }
+        if($str[$i] == "z" ){
+                 $str[$i] = $min[-1+$decalage];
+                 echo $str[$i];
+                 $i++;
+                 break;
+        }
+  
+        elseif ($str[$i] == $min[$v])
+        {
+                 $str[$i] = $min[$v+$decalage];
+                 echo $str[$i];
+                 $i++;
+                 break;
+        }
+            
     }
       echo $str[$i];
       $i++;
@@ -85,7 +99,7 @@ $i=0;
 while (isset($str[$i])==true)
 {
     
-         if ($str[$i] == "m" && $str[$i+1] == "e" && isset($str[$i+2])==false)
+         if (($str[$i] == "m" && $str[$i+1] == "e") && (isset($str[$i+2])==false || isset($str[$i+2])==" ") )
             {
                   $str[$i+2] = "_";
                   echo $str[$i];
@@ -96,19 +110,26 @@ while (isset($str[$i])==true)
            $i++;
 }
 }
-
+if($_GET==true)
+{
 $str = $_GET["str"];
 $decalage = $_GET["decalage"];
 if ($_GET["fonction"] == "gras") {
      gras($str);
 }
 if ($_GET["fonction"] == "cesar") {
-     cesar($str,$decalage);
+   if($_GET["decalage"]==true)
+   {
+    cesar($str,$decalage);
+   }
+   else{
+    echo "Please enter the Decalage value :)";
+   }
 }
 if ($_GET["fonction"] == "Plateforme_") {
      Plateforme_($str);
 }
-
+}
 
 ?>
 
