@@ -45,65 +45,89 @@ $sizemaj = sizeof($maj);
     $i++;
 }
 }
-function cesar($str,$decalage)
-{
-$i=0;
-$maj =  array("A", "B", "C", "D", "E", "F","G", "H", "I", "J", "K", "L","M", "N", "O", "P", "Q", "R","S", "T", "U", "V", "W", "X","Y", "Z");
-$min =  array("a", "b", "c", "d", "e", "f","g", "h", "i", "j", "k", "l","m", "n", "o", "p", "q", "r","s", "t", "u", "v", "w", "x","y", "z");
-$sizemaj = sizeof($maj);
-$sizemin = sizeof($min);
 
-while (isset($str[$i])==true)
-{
-   for($v = 0; $v < $sizemaj; $v++)
+function cesar($str, $decalage)
     {
-        if ($str[$i] == "Z" ) {
-                $str[$i] = $maj[-1+$decalage];
-                echo $str[$i];
-                $i++;
-                break;
-        }
-         elseif ($str[$i] == $maj[$v])
+        $i = 0;
+        $maj = array("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+        $min = array("a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z");
+        $sizemaj = sizeof($maj);
+
+        while (isset($str[$i])) 
         {
-                $str[$i] = $maj[$v+$decalage];
-                echo $str[$i];
-                $i++;
-                break;
-        }
-    }
-    for($v = 0; $v < $sizemin; $v++)
-    {
-        if($str[$i] == "z" ){
-                 $str[$i] = $min[-1+$decalage];
-                 echo $str[$i];
-                 $i++;
-                 break;
-        }
-  
-        elseif ($str[$i] == $min[$v])
+            $j = 0;
+            $decale = 0;
+            $bool = false;
+
+            while ($j < $sizemaj) 
+            {
+                $decale = $j + $decalage;
+
+                if ($decale < 26)
+                {
+
+                    if ($str[$i] == $maj[$j]) 
+                    {
+                        $str[$i] = $maj[$decale];
+                        echo $str[$i];
+                         $bool = true;
+                         break;
+                    }
+
+                    if ($str[$i] == $min[$j]) 
+                    {
+                        $str[$i] = $min[$decale];
+                        echo $str[$i];
+                        $bool = true;
+                        break;
+                    }
+                }
+                else 
+                {
+                    if ($str[$i] == $maj[$j]) 
+                    {
+                        $decale = $decale - 26;
+                        $str[$i] = $maj[$decale];
+                        echo $str[$i];
+                        $bool = true;
+                        break;
+                    }
+                    if ($str[$i] == $min[$j]) 
+                    {
+                        $decale = $decale - 26;
+                        $str[$i] = $min[$decale];
+                        echo $str[$i];
+                        $bool = true;
+                        break;
+                    }
+                }
+
+                $j++;
+            }
+        
+        if($bool == false)
         {
-                 $str[$i] = $min[$v+$decalage];
-                 echo $str[$i];
-                 $i++;
-                 break;
+           echo $str[$i];
+                    
         }
-            
-    }
-      echo $str[$i];
-      $i++;
-}
-}
+            $i++;
+     }
+  }
+
+
 function Plateforme_($str)
 {     
 $i=0;
 while (isset($str[$i])==true)
 {
     
-         if (($str[$i] == "m" && $str[$i+1] == "e") && (isset($str[$i+2])==false || isset($str[$i+2])==" ") )
+         if (($str[$i] == "m" && $str[$i+1] == "e") && (isset($str[$i+2])==false || isset($str[$i+1])==" ") )
             {
                   $str[$i+2] = "_";
                   echo $str[$i];
                   $i++;
+
+                 
             }
     
            echo $str[$i];
