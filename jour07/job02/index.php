@@ -12,7 +12,7 @@ elseif (isset($_POST["dc"]) == false){
     setcookie("nbvisites", $cpt, 0);
 }
 if (isset($_POST["dc"])){
-     setcookie("nbvisites","1",0);
+     setcookie("nbvisites","0",0);
      header('Location:index.php');
 
 }
@@ -24,4 +24,3 @@ echo $_COOKIE['nbvisites'];
 	  <input name="dc" value="Reset Counter" type="submit" />
 </form>
 
-<button><a href="index.php">Clean POST</a></button>

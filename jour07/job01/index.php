@@ -13,6 +13,7 @@ elseif (isset($_POST["dc"]) == false){
 if (isset($_POST["dc"])){
 	session_destroy();
 	$_SESSION['nbvisites']= 0;
+	header('Location:index.php');
 }
 echo $_SESSION['nbvisites'];
 
@@ -22,5 +23,3 @@ echo $_SESSION['nbvisites'];
 	  <input name="dc" value="Reset Counter" type="submit" />
 </form>
 
-
-<button><a href="index.php">Clean POST</a></button>
