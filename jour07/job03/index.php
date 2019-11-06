@@ -31,6 +31,6 @@ while ( $i < $taille) {
 </form>
 
 <form action="index.php" method="post">
-	  <input name="dc" value="Reset Counter" type="submit" />
+	  <input name="dc" value="Reset Array" type="submit" />
 </form>
 
