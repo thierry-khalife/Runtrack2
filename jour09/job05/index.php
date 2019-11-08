@@ -19,7 +19,7 @@ mysqli_close($cnx);
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>Job04</title>
+        <title>Job05</title>
     </head>
     <body>
         <table border>
